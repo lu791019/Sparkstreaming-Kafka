@@ -1,0 +1,30 @@
+------------------------------ML utime Predict---------------------------
+[topic for Pdata]
+bin/kafka-topics.sh --zookeeper 10.120.14.120:2182 --create --topic Pdata --partitions 3 --replication-factor 3
+bin/kafka-topics.sh --zookeeper 10.120.14.120:2182 --describe --topic Pdata
+
+
+[topic for utime]
+bin/kafka-topics.sh --zookeeper 10.120.14.120:2182 --create --topic utime --partitions 3 --replication-factor 3
+bin/kafka-topics.sh --zookeeper 10.120.14.120:2182 --describe --topic utime 
+
+
+[Prducer for Pdata testing]
+bin/kafka-console-producer.sh --broker-list 10.120.14.120:9092 --topic Pdata
+
+
+[Consumer for utime testing]
+bin/kafka-console-consumer.sh --zookeeper 10.120.14.120:2182 --topic utime
+
+
+%kafkastream去接topic Pdata資料(from web producer) 做處理+預測 再將結果丟回hdfs(by pyhdpfs)和topic utime(by producer)
+
+------------------------------DP img recognition---------------------------
+
+[topic for org ]
+
+
+[topic for recog]
+
+
+
